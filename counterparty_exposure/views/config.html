@@ -1,0 +1,152 @@
+<!-- <div style="padding:10px">
+    <button class="btn btn-primary" ng-click="selected='configMgmt'" ng-class="{'active': selected == 'configMgmt'}">Configuration</button>
+    <button class="btn btn-primary" ng-click="selected='counterpartyMgmt'" ng-class="{'active': selected == 'counterpartyMgmt'}">Counterparty</button>
+    <button class="btn btn-primary" ng-click="selected='newsSourceMgmt'" ng-class="{'active': selected == 'newsSourceMgmt'}">News Source</button>
+    <button class="btn btn-primary" ng-click="selected='frequencyMgmt'" ng-class="{'active': selected == 'frequencyMgmt'}">Frequency</button>
+</div> -->
+<div class="card" ng-if="selected=='configMgmt'">
+    <div class="card-header">
+        Configuration Management
+        <div class="pull-right">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#viewEditModal"
+             ng-click="addNewConfig()">Add New Configuration</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover table-striped table-bordered table-outline">
+            <thead class="bg-primary">
+                <tr>
+                    <td>Counterparty</td>
+                    <td>Frequency</td>
+                    <td>Threshold</td>
+                    <td>News Source</td>
+                    <td>Risk Officers</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in details">
+                    <td>{{item.counterparty}}</td>
+                    <td>{{item.frequency}}</td>
+                    <td>{{item.threshold}}</td>
+                    <td>{{item.newsSource}}</td>
+                    <td>{{item.riskOfficers}}</td>
+                    <td><a style="color: blue; cursor: pointer" ng-click="selectedConfiguration(item)"
+                        data-toggle="modal" data-target="#viewEditModal">View/Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+<!-- Modal -->
+<div class="modal fade" id="viewEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Configuration: {{selectedConfig.counterparty}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Counterparty Name</label>
+                    <!-- <select class="form-control">
+                        <option>GLO Airlines</option>
+                    </select> -->
+                    <input type="text" class="form-control" ng-model="selectedConfig.counterparty">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Frequency of Refresh</label>
+                    <select class="form-control" ng-model="selectedConfig.frequency">
+                        <option>5 mins</option>
+                        <option>10 mins</option>
+                        <option>15 mins</option>
+                        <option>20 mins</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Threshold for Alert</label>
+                    <select class="form-control" ng-model="selectedConfig.threshold">
+                        <option>80</option>
+                        <option>100</option>
+                        <option>120</option>
+                        <option>140</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
+                    <h5 class="pull-left">News Source</h5>
+                    <a class="pull-right" 
+                    style="color: blue; cursor: pointer; text-decoration: underline"
+                    ng-click="addNewsSource()">Add</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover table-strpied table-outline table-bordered">
+                        <thead class="bg-primary">
+                            <tr>
+                                <!-- <th>Select</th> -->
+                                <th>News Source to Track</th>
+                                <th>Weight Of the Source</th>
+                                <th>Website</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in selectedConfig.newsSourceDetails">
+                                <!-- <td><input type="checkbox" class="form-control"></td> -->
+                                <td><input type="text" class="form-control" ng-model="item.newsSource"></td>
+                                <td><input type="text" class="form-control" ng-model="item.wtOfSource"></td>
+                                <td><input type="text" class="form-control" ng-model="item.website"></td>
+                                <td><a style="cursor: pointer"><i class="fa fa-remove" style="color:red" ng-click="removeNewsSource(item)"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div>
+                    <h5 class="pull-left">Contact Details of the Risk Officers</h5>
+                    <a class="pull-right" 
+                    style="color: blue; cursor: pointer; text-decoration: underline"
+                    ng-click="addContact()">Add</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover table-strpied table-outline table-bordered">
+                        <thead class="bg-primary">
+                            <tr>
+                                <th>Risk Officer</th>
+                                <th>Email</th>
+                                <th>Contact Number</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="contact in selectedConfig.riskOfficersContact">
+                                <td><input type="text" class="form-control" ng-model="contact.riskOfficer"></td>
+                                <td><input type="text" class="form-control" ng-model="contact.email"></td>
+                                <td><input type="text" class="form-control" ng-model="contact.contactNumber"></td>
+                                <td><a style="cursor: pointer"><i class="fa fa-remove" style="color:red" ng-click="removeContact(item)"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

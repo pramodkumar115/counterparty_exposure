@@ -1,0 +1,61 @@
+<div class="card">
+    <div class="card-header">
+        Counterparty Collateral Details
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <label style="font-weight: bold">Counterparty Name:</label>
+                <span>Monument Street Funding, LLC</span>
+            </div>
+            <div class="col-lg-6">
+                <label>New Analytics Score: 78.00%
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <label style="font-weight: bold">Gross CE:</label>
+                <span>1210</span>
+            </div>
+            <div class="col-lg-4">
+                <label style="font-weight: bold">Net MTM:</label>
+                <span>685</span>
+            </div>
+            <div class="col-lg-4">
+                <label style="font-weight: bold">Net CE:</label>
+                <span>-525</span>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered table-outline">
+                <thead class="bg-primary">
+                    <tr>
+                        <th colspan="2" style="text-align: center">Collateral Details</th>
+                        <th rowspan="2">MTM</th>
+                        <th rowspan="2">Credit Rating</th>
+                        <th rowspan="2">News Analytics Score</th>
+                        <th rowspan="2">Last Refresh Time</th>
+                    </tr>
+                    <tr>
+                        <th>Issuing Entity</td>
+                        <th>Collateral Class</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in data">
+                        <td>{{item.issuingEntity}}</td>
+                        <td>{{item.collateralClass}}</td>
+                        <td>{{item.MTM}}</td>
+                        <td>{{item.creditRating}}</td>
+                        <td ng-class="{'bg-green' : item.newAnalyticScore> 0 && item.newAnalyticScore<=40,
+                            'bg-yellow':  item.newAnalyticScore> 40 && item.newAnalyticScore<=70,
+                            'bg-orange':  item.newAnalyticScore> 70 && item.newAnalyticScore<=80,
+                            'bg-red':  item.newAnalyticScore> 80
+                        }">{{item.newAnalyticScore}}</td>
+                        <td>{{item.lastRefreshTime}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-header">
+        Counterparty Credit Exposure Details
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered table-outline">
+                <thead class="bg-primary">
+                    <tr>
+                        <th colspan="2" style="text-align: center">Counterparty Details</th>
+                        <th rowspan="2" style="text-align: center">News Analytic Score</th>
+                        <th colspan="2" style="text-align: center">Securities Finance Transaction PE</th>
+                        <th colspan="8" style="text-align: center">Issuer Risk</th>
+                        <th colspan="2" style="text-align: center">Exposure as Custodian</th>
+                    </tr>
+                    <tr>
+                        <th>Counterparty Name</td>
+                        <th>Counterparty ID</td>
+                        <th>SLB PE </th>
+                        <th>REPO/ Reverse REPO PE</th>
+                        <th>Equity MTM</th>
+                        <th>Equity Derivatives</th>
+                        <th>Fixed Income MTM</th>
+                        <th>Fixed Income Derivatives</th>
+                        <th>Notional of CDS bought</th>
+                        <th>Notional of CDS sold</th>
+                        <th>Net Notional of CDS</th>
+                        <th>Net MTM CDS</th>
+                        <th>Cash Held (US Dollar or US Dollar equivalent)</th>
+                        <th>Securities Held PE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in data">
+                        <td><a href="#collateral">{{item.counterpartyName}}</a></td>
+                        <td>{{item.counterpartyId}}</td>
+                        <td ng-class="{'bg-green' : item.newsAnalyticsScore> 0 && item.newsAnalyticsScore<=40,
+                            'bg-yellow':  item.newsAnalyticsScore> 40 && item.newsAnalyticsScore<=70,
+                            'bg-orange':  item.newsAnalyticsScore> 70 && item.newsAnalyticsScore<=80,
+                            'bg-red':  item.newsAnalyticsScore> 80
+                        }">{{item.newsAnalyticsScore}}</td>
+                        <td>{{item.subPE}}</td>
+                        <td>{{item.repo}}</td>
+                        <td>{{item.equityMTM}}</td>
+                        <td>{{item.equityDerivatives}}</td>
+                        <td>{{item.fiMTM}}</td>
+                        <td>{{item.fiDerivatives}}</td>
+                        <td>{{item.notionalCDS}}</td>
+                        <td>{{item.notionalCDSSold}}</td>
+                        <td>{{item.netNotionalCDS}}</td>
+                        <td>{{item.netMTM}}</td>
+                        <td>{{item.cashHeld}}</td>
+                        <td>{{item.securitiesHeld}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

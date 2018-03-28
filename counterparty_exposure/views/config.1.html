@@ -1,0 +1,175 @@
+<div style="padding:10px">
+    <button class="btn btn-primary" ng-click="selected='configMgmt'" ng-class="{'active': selected == 'configMgmt'}">Configuration</button>
+    <button class="btn btn-primary" ng-click="selected='counterpartyMgmt'" ng-class="{'active': selected == 'counterpartyMgmt'}">Counterparty</button>
+    <button class="btn btn-primary" ng-click="selected='newsSourceMgmt'" ng-class="{'active': selected == 'newsSourceMgmt'}">News Source</button>
+    <button class="btn btn-primary" ng-click="selected='frequencyMgmt'" ng-class="{'active': selected == 'frequencyMgmt'}">Frequency</button>
+</div>
+<div class="card" ng-if="selected=='configMgmt'">
+    <div class="card-header">
+        Configuration Management
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Counterparty Name</label>
+                    <select class="form-control">
+                        <option>GLO Airlines</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Frequency of Refresh</label>
+                    <select class="form-control">
+                        <option>5 mins</option>
+                        <option>10 mins</option>
+                        <option>15 mins</option>
+                        <option>20 mins</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Threshold for Alert</label>
+                    <select class="form-control">
+                        <option>80</option>
+                        <option>100</option>
+                        <option>120</option>
+                        <option>140</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="table-responsive">
+                    <table class="table table-hover table-strpied table-outline table-bordered">
+                        <thead class="bg-primary">
+                            <tr>
+                                <th>Select</th>
+                                <th>News Source to Track</th>
+                                <th>Weight Of the Source</th>
+                                <th>Website</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in data">
+                                <td><input type="checkbox" class="form-control"></td>
+                                <td>{{item.newsSource}}</td>
+                                <td>{{item.wtOfSource}}</td>
+                                <td>{{item.website}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <h4>Contact Details of the Risk Officers to be Notified</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover table-strpied table-outline table-bordered">
+                        <thead class="bg-primary">
+                            <tr>
+                                <th>Risk Officer</th>
+                                <th>Email</th>
+                                <th>Contact Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="contact in contactDetails">
+                                <td>{{contact.riskOfficer}}</td>
+                                <td>{{contact.email}}</td>
+                                <td>{{contact.contactNumber}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div style="text-align: right">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
+
+<div class="card" ng-if="selected=='counterpartyMgmt'">
+    <div class="card-header">
+        Counterparty Management
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Counterparty Name</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Counterparty ID</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div style="text-align: right">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
+
+<div class="card" ng-if="selected=='newsSourceMgmt'">
+    <div class="card-header">
+        News Source Management
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>News Source</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Website Name</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Weight of the Source</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div style="text-align: right">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
+
+<div class="card" ng-if="selected=='frequencyMgmt'">
+    <div class="card-header">
+        Frequency Management
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>New Frequency</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div style="text-align: right">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>

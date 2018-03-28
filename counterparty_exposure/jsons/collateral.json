@@ -1,0 +1,124 @@
+{
+    "data": [
+        {
+            "issuingEntity": "Monument Street Funding, LLC",
+            "collateralClass": "Self Equity",
+            "MTM": 5,
+            "creditRating": "BBB+",
+            "newAnalyticScore": 87,
+            "lastRefreshTime": "2017-10-05-12.58.12"
+        },
+        {
+            "issuingEntity": "Monument Street Funding, LLC",
+            "collateralClass": "Self Issued Bonds",
+            "MTM": 67,
+            "creditRating": "BBB+",
+            "newAnalyticScore": 87,
+            "lastRefreshTime": "2017-10-05-12.58.13"
+        },
+        {
+            "issuingEntity": "GLO Airlines",
+            "collateralClass": "Third Party Equity",
+            "MTM": 72,
+            "creditRating": "BBB-",
+            "newAnalyticScore": 78,
+            "lastRefreshTime": "2017-10-05-12.58.14"
+        },
+        {
+            "issuingEntity": "Valeant",
+            "collateralClass": "Third Party Equity",
+            "MTM": 54,
+            "creditRating": "BB+",
+            "newAnalyticScore": 78,
+            "lastRefreshTime": "2017-10-05-12.58.15"
+        },
+        {
+            "issuingEntity": "Colt Defense",
+            "collateralClass": "Third Party Equity",
+            "MTM": 90,
+            "creditRating": "B+",
+            "newAnalyticScore": 77,
+            "lastRefreshTime": "2017-10-05-12.58.16"
+        },
+        {
+            "issuingEntity": "A&P",
+            "collateralClass": "Third Party Equity",
+            "MTM": 58,
+            "creditRating": "BBB-",
+            "newAnalyticScore": 73,
+            "lastRefreshTime": "2017-10-05-12.58.17"
+        },
+        {
+            "issuingEntity": "Sears",
+            "collateralClass": "Third Party Equity",
+            "MTM": 24,
+            "creditRating": "BBB-",
+            "newAnalyticScore": 71,
+            "lastRefreshTime": "2017-10-05-12.58.18"
+        },
+        {
+            "issuingEntity": "HTC",
+            "collateralClass": "Third Party Equity",
+            "MTM": 80,
+            "creditRating": "BB+",
+            "newAnalyticScore": 69,
+            "lastRefreshTime": "2017-10-05-12.58.19"
+        },
+        {
+            "issuingEntity": "Post Holdings",
+            "collateralClass": "Third Party Equity",
+            "MTM": 17,
+            "creditRating": "BB+",
+            "newAnalyticScore": 63,
+            "lastRefreshTime": "2017-10-05-12.58.20"
+        },
+        {
+            "issuingEntity": "Portigon, AG",
+            "collateralClass": "Third Party Bonds",
+            "MTM": 15,
+            "creditRating": "B",
+            "newAnalyticScore": 56,
+            "lastRefreshTime": "2017-10-05-12.58.21"
+        },
+        {
+            "issuingEntity": "GoPro",
+            "collateralClass": "Third Party Bonds",
+            "MTM": 15,
+            "creditRating": "A+",
+            "newAnalyticScore": 39,
+            "lastRefreshTime": "2017-10-05-12.58.22"
+        },
+        {
+            "issuingEntity": "Navient",
+            "collateralClass": "Third Party Bonds",
+            "MTM": 86,
+            "creditRating": "A",
+            "newAnalyticScore": 38,
+            "lastRefreshTime": "2017-10-05-12.58.23"
+        },
+        {
+            "issuingEntity": "Limited Stores",
+            "collateralClass": "Third Party Bonds",
+            "MTM": 63,
+            "creditRating": "BB+",
+            "newAnalyticScore": 33,
+            "lastRefreshTime": "2017-10-05-12.58.24"
+        },
+        {
+            "issuingEntity": "USA",
+            "collateralClass": "Sovereign Security",
+            "MTM": 61,
+            "creditRating": "AAA+",
+            "newAnalyticScore": 0,
+            "lastRefreshTime": "2017-10-05-12.58.25"
+        },
+        {
+            "issuingEntity": "Monument Street Funding, LLC",
+            "collateralClass": "Other Assets (land/building)",
+            "MTM": 25,
+            "creditRating": "BBB+",
+            "newAnalyticScore": 87,
+            "lastRefreshTime": "2017-10-05-12.58.26"
+        }
+    ]
+}
